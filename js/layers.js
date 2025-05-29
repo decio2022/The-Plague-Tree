@@ -4093,6 +4093,20 @@ addLayer("stat", {
             ],
             unlocked() {return inChallenge("ct",32) == true}
         },
+        "Boosts": {
+            content: [
+                "blank",
+                ["raw-html",
+                    function () {
+                        let a = "Virus boost: "+player.v.points.max(1).log(10).min("ee308")+"<br><br>"
+                        let b = "Infectivity boost: "+player.i.points.max(1).log(10).min("ee308")+"<br><br>"
+                        let c = "Severity boost: "+player.s.severity.points.max(1).log(10).min("ee308")+"<br><br>"
+                        let d = "Death boost: "+player.d.points.max(1).log(10).min("ee308")+"<br><br>"
+                    }
+                ,]
+            ],
+            unlocked() {return true}
+        },
     },
 })
 addLayer("a", {
