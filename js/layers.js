@@ -1777,7 +1777,7 @@ addLayer("s", {
             if (hasMilestone("Ui",12)) eff = eff.mul(tmp.Ui.milestones[12].effect)
         }        
         else {
-        if(player.s.severity.points.gt(0)) eff = eff.mul(player.s.severity.points.max(1).log(10).min("ee308"))
+        if(player.s.severity.points.gte(0)) eff = eff.mul(player.s.severity.points.max(1).log(10).min("ee308"))
         if (hasSUpg(14)) eff = eff.mul(getSUpgEff(14))
         if (hasSUpg(32)) eff = eff.mul(getSUpgEff(32))
         eff = eff.mul(tmp.s.buyables[11].effect)
