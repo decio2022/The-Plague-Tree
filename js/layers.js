@@ -445,6 +445,7 @@ addLayer("v", {
     softcapPower: 0.5,
     gainMult() {
         mult = decimalOne
+        if(player.v.points.gt(0)) mult = mult.mul(player.v.points.max(1).log(10).min("ee308"))
         if(hasVUpg(22)) mult = mult.mul(getVUpgEff(22))
         if(hasVUpg(31)) mult = mult.mul(getVUpgEff(31))
         if(hasIUpg(11)) mult = mult.mul(getIUpgEff(11))
@@ -772,6 +773,7 @@ addLayer("i", {
     gainMult() {
         imult = decimalOne
         if (!inChallenge("ct",32)) {
+        if(player.i.points.gt(0)) imult = imult.mul(player.i.points.max(1).log(10).min("ee308"))
         if (hasIUpg(13)) imult = imult.mul(getIUpgEff(13))
         if (hasIUpg(23)) imult = imult.mul(getIUpgEff(23))
         imult = imult.mul(tmp.u.effect)
@@ -1775,6 +1777,7 @@ addLayer("s", {
             if (hasMilestone("Ui",12)) eff = eff.mul(tmp.Ui.milestones[12].effect)
         }        
         else {
+        if(player.s.severity.points.gt(0)) eff = eff.mul(player.s.severity.points.max(1).log(10).min("ee308"))
         if (hasSUpg(14)) eff = eff.mul(getSUpgEff(14))
         if (hasSUpg(32)) eff = eff.mul(getSUpgEff(32))
         eff = eff.mul(tmp.s.buyables[11].effect)
@@ -3315,7 +3318,9 @@ addLayer("d", {
             if (hasMilestone("Ur",4)) mult = mult.mul(100)
             if (hasMilestone("Ur",6)) mult = mult.mul(tmp.Ur.milestones[6].effect)
         }
-        else {if (hasDUpg(12)) mult = mult.mul(getDUpgEff(12))
+        else {
+        if(player.d.points.gt(0)) mult = mult.mul(player.d.points.max(1).log(10).min("ee308"))
+        if (hasDUpg(12)) mult = mult.mul(getDUpgEff(12))
         if (hasDUpg(22)) mult = mult.mul(getDUpgEff(22))
         if (hasDUpg(24)) mult = mult.mul(getDUpgEff(24))
         if (hasFUpg(23)) mult = mult.mul(getFUpgEff(23))
