@@ -485,7 +485,7 @@ addLayer("v", {
         rows: 3,
         cols: 3,
         11: {
-            title: "Start",
+            title: "Virus Upgrade 1",
             description: "Gain 0.1 cases/s.",
             cost: decimalOne,
             effect(){
@@ -496,7 +496,7 @@ addLayer("v", {
             }
         },
         12: {
-            title: "Infection",
+            title: "Virus Upgrade 2",
             description: "Multiply cases gain.",
             cost: decimalTwo,
             base() {
@@ -540,7 +540,7 @@ addLayer("v", {
             }
         },
         13: {
-            title: "Transmission",
+            title: "Virus Upgrade 3",
             description: "Multiplier to cases based on VP.",
             cost: decimalFive,
             effect(){
@@ -596,7 +596,7 @@ addLayer("v", {
             }
         },
         21: {
-            title: "Self Boost",
+            title: "Virus Upgrade 4",
             description: "Multiplier to cases based on cases.",
             cost: decimalTen,
             effect(){
@@ -624,8 +624,8 @@ addLayer("v", {
             }
         },
         22: {
-            title: "Contaminate",
-            description: "Multiplier to VP based on cases.",
+            title: "Virus Upgrade 5",
+            description: "Multipier to VP based on cases.",
             cost: new Decimal(20),
             effect(){
                 let v22 = player.points.add(1).max(1)
@@ -642,8 +642,8 @@ addLayer("v", {
             }
         },
         23: {
-            title: "More Infections",
-            description: "Raise 'Infection' to the number of bought upgrades.",
+            title: "Virus Upgrade 6",
+            description: "Raise 'Virus Upgrade 2' to the number of bought upgrades.",
             cost: new Decimal(200),
             effect(){
                 let v23 = player.v.upgrades.length
@@ -658,7 +658,7 @@ addLayer("v", {
             }
         },
         31: {
-            title: "Disease",
+            title: "Virus Upgrade 7",
             description: "Multiplier to VP based on VP.",
             cost: new Decimal(5e3),
             effect(){
@@ -677,8 +677,8 @@ addLayer("v", {
             }
         },
         32: {
-            title: "BOOSTER",
-            description: "'Self Boost' is stronger based on VP.",
+            title: "Virus Upgrade 8",
+            description: "'Virus Upgrade 4' is stronger based on VP.",
             cost: new Decimal(2.5e5),
             effect(){
                 let v32 = player.v.points.add(10).max(10)
@@ -693,8 +693,8 @@ addLayer("v", {
             }
         },
         33: {
-            title: "Food Contamination",
-            description: "'Contaminate' is stronger based on cases.",
+            title: "Virus Upgrade 9",
+            description: "'Virus Upgrade 5' is stronger based on cases.",
             cost: new Decimal(5e6),
             effect(){
                 let v33 = player.points.add(10).max(10)
