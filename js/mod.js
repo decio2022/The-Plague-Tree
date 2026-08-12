@@ -485,17 +485,34 @@ var displayThings = [
         
 		return a + b+ (options.autosave ? "" : ". Warning: autosave is off")
 	},
-	function(){
-		let a = new Date().getTime() - player.lastSave
-		let b = "Last save was " + formatTime(a/1000) + " ago."
-		if (lastTenTicks.length < 10) return b
-		let c = 0
-		for (i = 0; i<10; i++){
-			c += lastTenTicks[i] / 10000
-		}
-        let d = isEndgame()?makeBlue("<br>You are past endgame,<br>and the game might not be balanced here."):""
-		return b + " Average TPS = " + format(c, 3) + "s/tick."+d
-	}
+    function () { 
+            let x = player.points.max(1e-111)
+            //let a = "You have "+format(x)+" cases.<br><br>"
+            let p = 6.187e34**3*1e-21
+            let height = slog(x).floor().div(100)
+            let digits = x.log10().floor().add(1).div(3)
+            let years = digits.div(31556952)
+            let unis = years.div(13.78e9) 
+            let size = formatSize(Decimal.div(1e-21,x.min(p)).root(3))
+            let b = "If every case were the size of SARS-VoC-3, and SARS-VoC-3 is "+size+" in diameter, you would have enough to make a SARS-CoV-2 virus."
+            if (height.gte(8.8e26)) b = "If every 10 in the cases power tower were 1 centimeter tall, the power tower would be "+formatSize(height) + " tall."
+            else if (height.gte(1.71)) b = "If every 10 in the cases power tower were 1 centimeter tall, the power tower would be "+formatSize(height) + " tall (" + heightComp(height) + ")."
+            else if (x.gte(tet10(100))) b = "If every 10 in the cases power tower were 1 centimeter tall, the power tower would be "+formatSize(height) + " tall (" + format(height.div(0.0171)) + "% of your height)."
+            else if (years.gte(1e40)) b = "The time needed to finish writing your full cases amount at a rate of 3 digits per second would span " + formatTimeLong(digits)+"."
+            else if (years.gte(1e9)) {
+                b = "The time needed to finish writing your full cases amount at a rate of 3 digits per second would span "
+                if (unis.lt(1)) b+= format(unis.mul(100)) + "% of the age of the universe."
+                else b+= format(unis) + " times the age of the universe."
+            }
+            else if (years.gte(2022)) b = "If you wanted to finish writing out your cases amount at a rate of 3 digits per second, you would need to start it in " + eventsTime(years)
+            else if (x.gte(Decimal.pow(10,750739887.08))) {b = "If you wrote 3 digits of your cases amount every second since you were born, you would "
+                if (years.gte(79.3)) b += "be a ghost for " + format(years.sub(79.3).div(years).mul(100)) + "% of the session."
+	            else b += "waste " + format(years.div(0.793)) + "% of your projected average lifespan."
+            }
+            else if (x.gte("ee5")) b = "If you wrote 3 digits per second, it would take "+formatTime(digits)+" to write down your cases."
+            else if (x.gte(p)) b = "If every case were the size of SARS-VoC-3, and SARS-VoC-3 is 1 Planck Length in diameter, you would have enough to make "+formatComp(x.mul(2.2108845e-105))
+            return b
+        }
 ]
 
 // Determines when the game "ends"
