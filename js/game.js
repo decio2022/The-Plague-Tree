@@ -456,7 +456,7 @@ function gameLoop() {
 	addTime(diff)
 	adjustPopupTime(diff)
 	player.points = player.points.add(tmp.pointGen.times(diff)).max(0)
-	if (hasMilestone("u", 2)) generatePoints("i",diff)
+	generatePoints("i",diff)
 	if (player.hideNews && document.getElementById("newsTicker")) {
 		document.getElementById("newsTicker").style.display = "none";
 	}

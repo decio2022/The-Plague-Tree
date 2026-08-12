@@ -472,7 +472,7 @@ addLayer("v", {
         },
     ],
     update(diff) {
-        if (hasMilestone("i", 1)) generatePoints("v", diff);
+        generatePoints("v", diff);
     },
     doReset(resettingLayer) {
         let keep = [];
@@ -1250,7 +1250,7 @@ addLayer("u", {
         points: decimalZero,
         best: decimalZero,
         total: decimalZero,
-        auto: false,
+        auto: true,
     unlocked: false
     }},
     color: "#3fa3d3",
@@ -1374,7 +1374,7 @@ addLayer("u", {
     },
     autoPrestige() { return (hasMilestone("d", 2) && player.d.auto) },
     canBuyMax() { return hasMilestone("d", 1)},
-    resetsNothing() { return hasMilestone("d", 5) },
+    resetsNothing() { return true },
     milestones: {
         0: {
             requirementDescription: "2 uncoaters",
@@ -1756,7 +1756,7 @@ addLayer("s", {
         if (hasMilestone("f", 4) || hasMilestone("a",1)) keep.push("challenges")
         if (layers[resettingLayer].row > this.row || resettingLayer=="d") layerDataReset(this.layer, keep)
     },
-    resetsNothing() { return hasMilestone("d", 9) },
+    resetsNothing() { return true },
     autoPrestige() { return (hasMilestone("d", 7) && player.d.autos) },
     effbase() {
         let eff = new Decimal(123)
@@ -3270,7 +3270,7 @@ addLayer("d", {
         return speed
     },
     update(diff) {
-        if (hasMilestone("d", 10) && !inChallenge("f",31) && !inChallenge("Up",21)) generatePoints("d", diff/100);
+        if (!inChallenge("f",31) && !inChallenge("Up",21)) generatePoints("d", diff/100);
         let t = diff*tmp.d.speed
         player.d.time = Decimal.add(player.d.time, t)
             if (player.d.time.gte(1)) {
