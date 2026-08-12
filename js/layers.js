@@ -1061,7 +1061,7 @@ addLayer("r", {
         return decimalOne
     },
     row: 1,
-    resetsNothing() { return hasMilestone("u", 5) },
+    resetsNothing() { return true },
     layerShown() {
         let shown = player.i.total.gte(decimalOne)
         if(player.r.unlocked) shown = true
