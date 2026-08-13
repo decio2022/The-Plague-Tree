@@ -3244,6 +3244,7 @@ addLayer("d", {
     exponent: new Decimal(0.0035),
     branches: ["i","r","s"],
     row: 2,
+    resetsNothing() { return true },
     hotkeys: [
         {
             key:"d", description: "D:Reset for deaths", onPress() {
