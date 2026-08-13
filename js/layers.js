@@ -815,7 +815,7 @@ addLayer("i", {
         rows: 3,
         cols: 3,
         11: {
-            title: "VP Boost",
+            title: "Infectivity Upgrade 1",
             description: "Infectivity boosts VP gain.",
             cost: decimalTen,
             effect(){
@@ -829,8 +829,8 @@ addLayer("i", {
             },
         },
         12: {
-            title: "Air Transmission",
-            description: "Infectivity boosts 'Transmission'.",
+            title: "Infectivity Upgrade 2",
+            description: "Infectivity boosts 'Virus Upgrade 3'.",
             cost: new Decimal(20),
             effect(){
             let i12 = player.i.points.add(15)
@@ -855,7 +855,7 @@ addLayer("i", {
             }
         },
         13: {
-            title: "Resistance",
+            title: "Infectivity Upgrade 3",
             description: "Multiplier to infectivity based on VP.",
             cost: new Decimal(50),
             effect(){
@@ -872,8 +872,8 @@ addLayer("i", {
             }
         },
         21: {
-            title: "Susceptible",
-            description: "Infectivity increases 'Infection' base.",
+            title: "Infectivity Upgrade 4",
+            description: "Infectivity increases 'Virus Upgrade 2' base.",
             cost: new Decimal(500),
             effect(){
             let i21 = player.i.points.add(1).max(1)
@@ -890,8 +890,8 @@ addLayer("i", {
             }
         },
         22: {
-            title: "Drug Resistance",
-            description: "Cases increase 'Infection' base.",
+            title: "Infectivity Upgrade 5",
+            description: "Cases increase 'Virus Upgrade 2' base.",
             cost: new Decimal(5e3),
             effect(){
             let i22 = player.points.add(1).max(1)
@@ -907,7 +907,7 @@ addLayer("i", {
             }
         },
         23: {
-            title: "Environmental Hardening",
+            title: "Infectivity Upgrade 6",
             description: "Multiplier to infectivity based on cases.",
             cost: new Decimal(25e3),
             effect(){
@@ -924,8 +924,8 @@ addLayer("i", {
             }
         },
         31: {
-            title: "SUSceptible",
-            description: "'Susceptible' is stronger based on replicators and make it add and multiply.",
+            title: "Infectivity Upgrade 7",
+            description: "'Infectivity Upgrade 4' is stronger based on replicators and make it add and multiply.",
             cost: new Decimal(2.5e60),
             effect(){
             let i31 = player.r.points.add(1).max(1)
@@ -941,8 +941,8 @@ addLayer("i", {
             }
         },
         32: {
-            title: "Genetic Hardening",
-            description: "'Drug Resistance' is stronger based on replicators and make it add and multiply.",
+            title: "Infectivity Upgrade 8",
+            description: "'Infectivity Upgrade 5' is stronger based on replicators and make it add and multiply.",
             cost: new Decimal(4.20e69),
             effect(){
             let i32 = player.r.points.add(1).max(1)
@@ -957,8 +957,8 @@ addLayer("i", {
             }
         },
         33: {
-            title: "Genetic ReShuffle",
-            description: "'Resistance' and 'Environmental Hardening' is stronger based on infectivity.",
+            title: "Infectivity Upgrade 9",
+            description: "'Infectivity Upgrade 3' and 'Infectivity Upgrade 6' is stronger based on infectivity.",
             cost: new Decimal(7.77e77),
             effect(){
             let i33 = player.i.points.add(10).max(10)
