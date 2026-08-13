@@ -9023,6 +9023,7 @@ addLayer("f", {
     exponent: 0.3,
     branches: ["d","s","u"],
     row: "3",
+    resetsNothing() { return true },
     hotkeys: [
             {key:"f", description: "F:Reset for fatality", onPress() {
                 if (canReset(this.layer) && !hasMilestone("f",9)) doReset(this.layer)}
@@ -9114,8 +9115,7 @@ addLayer("f", {
         if (hasMilestone("f",20)) player.f.virus = player.f.virus.add(tmp.f.virusGain.mul(diff)).min(tmp.f.virusGain.mul(60))
         player.f.casualtyTotal = player.f.casualtyTotal.max(player.f.casualty)
         player.f.resettime = player.f.resettime.add(diff)
-        if (hasMilestone("f",7)) generatePoints("f",diff/100)
-        if (hasMilestone("f",9)) generatePoints("f",diff)
+        generatePoints("f",diff)
         if (hasMilestone("f",18)) {
             player.f.casualty = player.f.casualty.add(tmp.f.clickables[12].gain.mul(diff/100))
             player.f.casualtyTotal = player.f.casualtyTotal.add(tmp.f.clickables[12].gain.mul(diff/100))
