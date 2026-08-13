@@ -443,6 +443,7 @@ addLayer("v", {
     exponent: 0.5,
     softcap: Decimal.pow(10,1e7),
     softcapPower: 0.5,
+    resetsNothing() { return true },
     gainMult() {
         mult = decimalOne
         if(hasVUpg(22)) mult = mult.mul(getVUpgEff(22))
@@ -735,6 +736,7 @@ addLayer("i", {
     branches: ["v"],
     softcap: new Decimal(Decimal.pow(10,1e7)),
     softcapPower: 0.5,
+    resetsNothing() { return true },
     hotkeys: [
         {
             key:"i", description: "I:Reset for infectivity", onPress() {
