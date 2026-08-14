@@ -16195,7 +16195,7 @@ addLayer("e", {
         let eff = Decimal.mul(1e6,tmp.e.buyables[31].effect)
         return eff.floor()
     },
-    resetsNothing() { return true) },
+    resetsNothing() { return true },
     canBuyMax() {return hasMilestone("e",3)},
     autoPrestige() { return (hasMilestone("e", 5) && player.e.autoi) },
     dgain(){//Disgain
