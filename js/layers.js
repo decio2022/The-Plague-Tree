@@ -9116,9 +9116,9 @@ addLayer("f", {
         player.f.casualtyTotal = player.f.casualtyTotal.max(player.f.casualty)
         player.f.resettime = player.f.resettime.add(diff)
         generatePoints("f",diff)
-        if (hasMilestone("f",18)) {
-            player.f.casualty = player.f.casualty.add(tmp.f.clickables[12].gain.mul(diff/100))
-            player.f.casualtyTotal = player.f.casualtyTotal.add(tmp.f.clickables[12].gain.mul(diff/100))
+        if (hasMilestone("f",12)) {
+            player.f.casualty = player.f.casualty.add(tmp.f.clickables[12].gain.mul(diff))
+            player.f.casualtyTotal = player.f.casualtyTotal.add(tmp.f.clickables[12].gain.mul(diff))
         }
         if (hasFUpg(113)) {
             player.f.casualty = player.f.casualty.add(getFUpgEff(113).mul(diff))
