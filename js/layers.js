@@ -16195,7 +16195,7 @@ addLayer("e", {
         let eff = Decimal.mul(1e6,tmp.e.buyables[31].effect)
         return eff.floor()
     },
-    resetsNothing() { return hasMilestone("e", 5) },
+    resetsNothing() { return true) },
     canBuyMax() {return hasMilestone("e",3)},
     autoPrestige() { return (hasMilestone("e", 5) && player.e.autoi) },
     dgain(){//Disgain
@@ -46340,7 +46340,7 @@ addLayer("Ur", {
         return decimalOne
     },
     row: 1,
-    resetsNothing() { return hasUpgrade("ct",483) },
+    resetsNothing() { return true },
     layerShown() {
         return player.uv.points.gte(3) && player.uv.tree == "unvaxxed"
     },
@@ -50079,7 +50079,7 @@ addLayer("Uu", {
         if (layers[resettingLayer].row > this.row || resettingLayer == 'Ud') layerDataReset(this.layer, keep)
     },
     autoPrestige() { return player.Uu.autou },
-    resetsNothing() { return hasMilestone("Uu",13) },
+    resetsNothing() { return true },
     update(diff) {
         player.Uu.time+=diff
         if (hasMilestone("Uu",7)) player.Uu.power = player.Uu.power.add(tmp.Uu.powerGain.mul(diff))
@@ -52779,7 +52779,7 @@ addLayer("Us", {
     canBuyMax() {
         return hasUpgrade("ct",543)
     },
-    resetsNothing() { return hasMilestone("Us", 10) },
+    resetsNothing() { return true },
     autoPrestige() { return (hasMilestone("Us", 10) && player.Us.autosymp) },
     effbase() {
         let eff = decimalThree
