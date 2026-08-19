@@ -113,7 +113,7 @@ function startCChallenge(id) {
 }
 
 function startIChallenge(id) {
-    doReset("i")
+    //doReset("i")
     player.v.upgrades = []
     player.e.ct = 0
     player.i.points = decimalZero
@@ -16849,7 +16849,7 @@ addLayer("e", {
         player.e.in = tmp.e.buyables[11].total.add(tmp.e.buyables[12].total).add(tmp.e.buyables[13].total).add(tmp.e.buyables[21].total.mul(10)).add(tmp.e.buyables[22].total.mul(10)).add(tmp.e.buyables[23].total.mul(10)).add(player.e.ins).add(upgradeEffect("e",44).mul(hasUpgrade("e",44)+0))
         player.e.infections = player.e.in.sub(player.e.spent)
         let gain = tmp.e.UIgain
-        if (hasUpgrade("e",162) && hasUpgrade("e",46)) player.e.qt = player.e.qt.max(gain)
+        if (hasUpgrade("e",46)) player.e.qt = player.e.qt.max(gain)
         if (player.e.autob) {
             if (hasMilestone("e",3)) {
                 player.e.buyables[11] = player.e.buyables[11].add(Decimal.log10(player.e.p.div(4e14).max(1)).div(Decimal.log10(5)).root(1.4).ceil().sub(player.e.buyables[11])).min(tmp.e.buyCap).max(player.e.buyables[11]).max(0)
