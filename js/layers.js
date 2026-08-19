@@ -827,6 +827,9 @@ addLayer("i", {
             effectDisplay(){
             return format(getIUpgEff(11))+"x"
             },
+            unlocked(){
+                return true && getIUpgEff(11).lt("eee10")
+            },
         },
         12: {
             title: "Infectivity Upgrade 2",
@@ -851,7 +854,7 @@ addLayer("i", {
             return i12dis
             },
             unlocked(){
-                return hasIUpg(11)
+                return hasIUpg(11) && getIUpgEff(12).lt("eee10")
             }
         },
         13: {
@@ -868,7 +871,7 @@ addLayer("i", {
             return format(getIUpgEff(13))+"x"
             },
             unlocked(){
-                return hasIUpg(12)
+                return hasIUpg(12) && getIUpgEff(13).lt("eee10")
             }
         },
         21: {
@@ -886,7 +889,7 @@ addLayer("i", {
             return "+"+format(getIUpgEff(21))
             },
             unlocked(){
-                return hasIUpg(13)
+                return hasIUpg(13) && getIUpgEff(21).lt("eee10")
             }
         },
         22: {
@@ -903,7 +906,7 @@ addLayer("i", {
             return "+"+format(getIUpgEff(22))
             },
             unlocked(){
-                return hasIUpg(21)
+                return hasIUpg(21) && getIUpgEff(22).lt("eee10")
             }
         },
         23: {
@@ -920,7 +923,7 @@ addLayer("i", {
             return format(getIUpgEff(23))+"x"
             },
             unlocked(){
-                return hasIUpg(22)
+                return hasIUpg(22) && getIUpgEff(23).lt("eee10")
             }
         },
         31: {
@@ -937,7 +940,7 @@ addLayer("i", {
             return format(getIUpgEff(31))+"x"
             },
             unlocked(){
-                return hasRUpg(32)
+                return hasRUpg(32) && getIUpgEff(31).lt("eee10")
             }
         },
         32: {
@@ -953,7 +956,7 @@ addLayer("i", {
             return format(getIUpgEff(32))+"x"
             },
             unlocked(){
-                return hasIUpg(31)
+                return hasIUpg(31) && getIUpgEff(32).lt("eee10")
             }
         },
         33: {
@@ -976,7 +979,7 @@ addLayer("i", {
                 return dis
             },
             unlocked(){
-                return hasIUpg(32)
+                return hasIUpg(32) && getIUpgEff(33).lt("eee10")
             }
         },
     },
