@@ -4570,7 +4570,7 @@ addLayer("a", {
             name: "E-World Quarantine",
             tooltip() {return "Get "+format("e78e8")+" cases in Quarantine. Reward: 8 AP."},
             done() {
-                return player.e.inC && player.points.gte("e7.8e9")
+                return hasUpgrade("e",46)
             },
             onComplete() {
                 addPoints("a",8)
