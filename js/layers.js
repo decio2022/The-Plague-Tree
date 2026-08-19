@@ -537,7 +537,7 @@ addLayer("v", {
                 return v12dis
             },
             unlocked(){
-                return hasVUpg(11)
+                return hasVUpg(11) && getVUpgEff(12).gte("eee10")
             }
         },
         13: {
@@ -593,7 +593,7 @@ addLayer("v", {
             return v13dis
             },
             unlocked(){
-                return hasVUpg(12)
+                return hasVUpg(12) && getVUpgEff(13).gte("eee10")
             }
         },
         21: {
@@ -621,7 +621,7 @@ addLayer("v", {
                 return v21dis
             },
             unlocked(){
-                return hasVUpg(13)
+                return hasVUpg(13) && getVUpgEff(21).gte("eee10")
             }
         },
         22: {
@@ -639,7 +639,7 @@ addLayer("v", {
                 return format(getVUpgEff(22))+"x"
             },
             unlocked(){
-                return hasVUpg(21)
+                return hasVUpg(21) && getVUpgEff(22).gte("eee10")
             }
         },
         23: {
@@ -655,7 +655,7 @@ addLayer("v", {
                 return "^"+format(getVUpgEff(23))
             },
             unlocked(){
-                return hasVUpg(22)
+                return hasVUpg(22) && getVUpgEff(23).gte("eee10")
             }
         },
         31: {
@@ -674,7 +674,7 @@ addLayer("v", {
                 return format(getVUpgEff(31))+"x"
             },
             unlocked(){
-                return hasVUpg(23)
+                return hasVUpg(23) && getVUpgEff(31).gte("eee10")
             }
         },
         32: {
@@ -690,7 +690,7 @@ addLayer("v", {
                 return "^"+format(getVUpgEff(32))
             },
             unlocked(){
-                return hasVUpg(31)
+                return hasVUpg(31) && getVUpgEff(32).gte("eee10")
             }
         },
         33: {
@@ -707,7 +707,7 @@ addLayer("v", {
                 return "^"+format(getVUpgEff(33))
             },
             unlocked(){
-                return hasVUpg(32)
+                return hasVUpg(32) && getVUpgEff(33).gte("eee10")
             }
         },
     },
