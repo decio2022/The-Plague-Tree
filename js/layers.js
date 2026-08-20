@@ -1103,6 +1103,9 @@ addLayer("r", {
             effectDisplay(){
             return format(getRUpgEff(11))+"x"
             },
+            unlocked(){
+                return true && getRUpgEff(11).lt("eee10")
+            },
         },
         12: {
             title: "DNA",
@@ -1120,7 +1123,7 @@ addLayer("r", {
             return "^"+format(getRUpgEff(12))
             },
             unlocked(){
-                return hasRUpg(11)
+                return hasRUpg(11) && getRUpgEff(12).lt("eee10")
             }
         },
         13: {
@@ -1136,7 +1139,7 @@ addLayer("r", {
             return format(getRUpgEff(13))+"x"
             },
             unlocked(){
-                return hasRUpg(12)
+                return hasRUpg(12) && getRUpgEff(13).lt("eee10")
             }
         },
         21: {
@@ -1152,7 +1155,7 @@ addLayer("r", {
             return format(getRUpgEff(21))+"x"
             },
             unlocked(){
-                return hasRUpg(13)
+                return hasRUpg(13) && getRUpgEff(21).lt("eee10")
             }
         },
         22: {
@@ -1175,7 +1178,7 @@ addLayer("r", {
                 return dis
             },
             unlocked(){
-                return hasRUpg(21)
+                return hasRUpg(21) && getRUpgEff(22).lt("eee10")
             }
         },
         23: {
@@ -1198,7 +1201,7 @@ addLayer("r", {
                 return dis
             },
             unlocked(){
-                return hasRUpg(22)
+                return hasRUpg(22) && getRUpgEff(23).lt("eee10")
             }
         },
         31: {
@@ -1215,7 +1218,7 @@ addLayer("r", {
             return "^"+format(getRUpgEff(31))
             },
             unlocked(){
-                return hasRUpg(23)
+                return hasRUpg(23) && getRUpgEff(31).lt("eee10")
             }
         },
         32: {
@@ -1242,7 +1245,7 @@ addLayer("r", {
             return "^"+format(getRUpgEff(33))
             },
             unlocked(){
-                return hasIUpg(33)
+                return hasIUpg(33) && getRUpgEff(33).lt("eee10")
             }
         },
     },
@@ -1429,6 +1432,9 @@ addLayer("u", {
             effectDisplay(){
             return format(getUUpgEff(11))+"x"
             },
+            unlocked(){
+                return true && getUUpgEff(11).lt("eee10")
+            },
         },
         12: {
             title: "Water Transmission",
@@ -1452,7 +1458,7 @@ addLayer("u", {
                 return u12dis
             },
             unlocked(){
-                return hasUUpg(11)
+                return hasUUpg(11) && getUUpgEff(12).lt("eee10")
             }
         },
         13: {
@@ -1476,7 +1482,7 @@ addLayer("u", {
             return format(tmp.u.upgrades[13].effect.r)+"x to replicators base, "+format(tmp.u.upgrades[13].effect.u)+"x to uncoaters base."
             },
             unlocked(){
-                return hasUUpg(12)
+                return hasUUpg(12) && tmp.u.upgrades[13].effect.r.lt("eee10") && tmp.u.upgrades[13].effect.u.lt("eee10")
             }
         },
         14: {
@@ -1496,7 +1502,7 @@ addLayer("u", {
             return format(getUUpgEff(14))+"x"
             },
             unlocked(){
-                return hasUUpg(13)
+                return hasUUpg(13) && getUUpgEff(14).lt("eee10")
             }
         },
         21: {
@@ -1515,7 +1521,7 @@ addLayer("u", {
             return format(getUUpgEff(21))+"x"
             },
             unlocked(){
-                return hasUUpg(14)
+                return hasUUpg(14) && getUUpgEff(21).lt("eee10")
             }
         },
         22: {
@@ -1533,7 +1539,7 @@ addLayer("u", {
             return "^"+format(getUUpgEff(22))
             },
             unlocked(){
-                return hasUUpg(21)
+                return hasUUpg(21) && getUUpgEff(22).lt("eee10")
             }
         },
         23: {
@@ -1555,7 +1561,7 @@ addLayer("u", {
                 return dis
             },
             unlocked(){
-                return hasUUpg(22)
+                return hasUUpg(22) && getUUpgEff(23).lt("eee10")
             }
         },
         24: {
@@ -1573,7 +1579,7 @@ addLayer("u", {
             return "^"+format(getUUpgEff(24))
             },
             unlocked(){
-                return hasUUpg(23)
+                return hasUUpg(23) && getUUpgEff(24).lt("eee10")
             }
         },
     },
@@ -1613,7 +1619,7 @@ addLayer("u", {
             },
             rewardDisplay() {return format(tmp.u.challenges[11].rewardEffect)+"x"},
             unlocked(){
-                return hasMilestone("u", 6)
+                return hasMilestone("u", 6) && tmp.u.challenges[11].rewardEffect.lt("eee10")
             }
         },
         12: {
@@ -1645,7 +1651,7 @@ addLayer("u", {
             },
             rewardDisplay() {return "^"+format(tmp.u.challenges[12].rewardEffect)},
             unlocked(){
-                return hasChallenge("u", 11)
+                return hasChallenge("u", 11) && tmp.u.challenges[12].rewardEffect.lt("eee10")
             }
         },
         21: {
@@ -1676,7 +1682,7 @@ addLayer("u", {
             },
             rewardDisplay() {return format(tmp.u.challenges[21].rewardEffect)+"x"},
             unlocked(){
-                return hasChallenge("u", 12)
+                return hasChallenge("u", 12) && tmp.u.challenges[21].rewardEffect.lt("eee10")
             }
         },
         22: {
@@ -1709,7 +1715,7 @@ addLayer("u", {
             },
             rewardDisplay() {return format(tmp.u.challenges[22].rewardEffect)+"x"},
             unlocked(){
-                return hasChallenge("u", 21)
+                return hasChallenge("u", 21) && tmp.u.challenges[22].rewardEffect.lt("eee10")
             }
         },
     },
