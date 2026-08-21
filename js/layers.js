@@ -3504,7 +3504,7 @@ addLayer("d", {
                 Effect: " + format(tmp[this.layer].buyables[this.id].effect)+"x\n\
                 Amount: " + formatWhole(getBuyableAmount("d", 11)) + extra
             },
-            unlocked() { return hasMilestone("f", 5) }, 
+            unlocked() { return hasMilestone("f", 5) && tmp[this.layer].buyables[this.id].effect.lt("eee10") }, 
             canAfford() {
                     return player.d.points.gte(tmp[this.layer].buyables[this.id].cost)},
             buy() { 
@@ -3562,7 +3562,7 @@ addLayer("d", {
                 Effect: " + format(tmp[this.layer].buyables[this.id].effect)+"x\n\
                 Amount: " + formatWhole(getBuyableAmount("d", 12)) + extra
             },
-            unlocked() { return player.d.buyables[11].gte(1) }, 
+            unlocked() { return player.d.buyables[11].gte(1) && tmp[this.layer].buyables[this.id].effect.lt("eee10") }, 
             canAfford() {
                     return player.d.points.gte(tmp[this.layer].buyables[this.id].cost)},
             buy() { 
@@ -12929,7 +12929,10 @@ addLayer("f", {
             },
             effectDisplay() {
                 return format(getFUpgEff(11)) + "x"
-            }
+            },
+            unlocked(){
+                return true && getFUpgEff(11).lt("eee10")
+            },
         },
         12: {
             title: "Deadliness",
@@ -12944,7 +12947,7 @@ addLayer("f", {
                 return format(getFUpgEff(12)) + "x"
             },
             unlocked() {
-                return hasFUpg(11)
+                return hasFUpg(11) && getFUpgEff(12).lt("eee10")
             }
         },
         13: {
@@ -12967,7 +12970,7 @@ addLayer("f", {
                 return dis
             },
             unlocked() {
-                return hasFUpg(12)
+                return hasFUpg(12) && getFUpgEff(13).lt("eee10")
             }
         },
         14: {
@@ -12988,7 +12991,7 @@ addLayer("f", {
                 return dis
             },
             unlocked() {
-                return hasFUpg(13)
+                return hasFUpg(13) && getFUpgEff(14).lt("eee10")
             }
         },
         15: {
@@ -13005,7 +13008,7 @@ addLayer("f", {
                 return "^"+format(getFUpgEff(15))
             },
             unlocked() {
-                return hasFUpg(14)
+                return hasFUpg(14) && getFUpgEff(15).lt("eee10")
             }
         },
         21: {
@@ -13022,7 +13025,7 @@ addLayer("f", {
                 return "^"+format(getFUpgEff(21))
             },
             unlocked() {
-                return hasFUpg(15)
+                return hasFUpg(15) && getFUpgEff(21).lt("eee10")
             }
         },
         22: {
@@ -13043,7 +13046,7 @@ addLayer("f", {
                 return dis
             },
             unlocked() {
-                return hasFUpg(21)
+                return hasFUpg(21) && getFUpgEff(22).lt("eee10")
             }
         },
         23: {
@@ -13059,7 +13062,7 @@ addLayer("f", {
                 return format(getFUpgEff(23))+"x"
             },
             unlocked() {
-                return hasFUpg(22)
+                return hasFUpg(22) && getFUpgEff(23).lt("eee10")
             }
         },
         24: {
@@ -13080,7 +13083,7 @@ addLayer("f", {
                 return dis
             },
             unlocked() {
-                return hasFUpg(23)
+                return hasFUpg(23) && getFUpgEff(24).lt("eee10")
             }
         },
         25: {
@@ -13106,7 +13109,7 @@ addLayer("f", {
                 return "^"+format(getFUpgEff(31))
             },
             unlocked() {
-                return hasFUpg(25)
+                return hasFUpg(25) && getFUpgEff(31).lt("eee10")
             }
         },
         32: {
@@ -13123,7 +13126,7 @@ addLayer("f", {
                 return "+"+format(getFUpgEff(32))
             },
             unlocked() {
-                return hasFUpg(31)
+                return hasFUpg(31) && getFUpgEff(32).lt("eee10")
             }
         },
         33: {
@@ -13139,7 +13142,7 @@ addLayer("f", {
                 return "^"+format(getFUpgEff(33))
             },
             unlocked() {
-                return hasMilestone("f", 6)
+                return hasMilestone("f", 6) && getFUpgEff(33).lt("eee10")
             }
         },
         34: {
@@ -13159,7 +13162,7 @@ addLayer("f", {
                 return dis
             },
             unlocked() {
-                return hasFUpg(33)
+                return hasFUpg(33) && getFUpgEff(34).lt("eee10")
             }
         },
         35: {
@@ -13175,7 +13178,7 @@ addLayer("f", {
                 return format(getFUpgEff(35))+"x"
             },
             unlocked() {
-                return hasFUpg(34)
+                return hasFUpg(34) && getFUpgEff(35).lt("eee10")
             }
         },
         41: {
@@ -13192,7 +13195,7 @@ addLayer("f", {
                 return format(getFUpgEff(41))+"x"
             },
             unlocked() {
-                return hasFUpg(35)
+                return hasFUpg(35) && getFUpgEff(41).lt("eee10")
             }
         },
         42: {
@@ -13208,7 +13211,7 @@ addLayer("f", {
                 return "+"+format(getFUpgEff(42))
             },
             unlocked() {
-                return hasFUpg(41)
+                return hasFUpg(41) && getFUpgEff(42).lt("eee10")
             }
         },
         43: {
@@ -13225,7 +13228,7 @@ addLayer("f", {
                 return "^"+format(getFUpgEff(43))
             },
             unlocked() {
-                return hasFUpg(42)
+                return hasFUpg(42) && getFUpgEff(43).lt("eee10")
             }
         },
         44: {
@@ -13242,7 +13245,7 @@ addLayer("f", {
                 return "^"+format(getFUpgEff(44))
             },
             unlocked() {
-                return hasFUpg(43)
+                return hasFUpg(43) && getFUpgEff(44).lt("eee10")
             }
         },
         45: {
@@ -13258,7 +13261,7 @@ addLayer("f", {
                 return format(getFUpgEff(45))+"x"
             },
             unlocked() {
-                return hasFUpg(44)
+                return hasFUpg(44) && getFUpgEff(45).lt("eee10")
             }
         },
         51: {
@@ -13276,7 +13279,7 @@ addLayer("f", {
                 return "+"+format(getFUpgEff(51))
             },
             unlocked() {
-                return hasFUpg(45)
+                return hasFUpg(45) && getFUpgEff(51).lt("eee10")
             }
         },
         52: {
@@ -13292,7 +13295,7 @@ addLayer("f", {
                 return format(getFUpgEff(52))+"x"
             },
             unlocked() {
-                return hasFUpg(51)
+                return hasFUpg(51) && getFUpgEff(52).lt("eee10")
             }
         },
         53: {
@@ -13309,7 +13312,7 @@ addLayer("f", {
                 return "+"+format(getFUpgEff(53))
             },
             unlocked() {
-                return hasFUpg(52)
+                return hasFUpg(52) && getFUpgEff(53).lt("eee10")
             }
         },
         54: {
@@ -13325,7 +13328,7 @@ addLayer("f", {
                 return "^"+format(getFUpgEff(54))
             },
             unlocked() {
-                return hasFUpg(53)
+                return hasFUpg(53) && getFUpgEff(54).lt("eee10")
             }
         },
         55: {
@@ -13341,7 +13344,7 @@ addLayer("f", {
                 return format(getFUpgEff(55))+"x"
             },
             unlocked() {
-                return hasFUpg(54)
+                return hasFUpg(54) && getFUpgEff(55).lt("eee10")
             }
         },
         61: {
@@ -13356,7 +13359,7 @@ addLayer("f", {
                 return format(getFUpgEff(61))+"x"
             },
             unlocked() {
-                return hasFUpg(55)
+                return hasFUpg(55) && getFUpgEff(61).lt("eee10")
             }
         },
         62: {
@@ -13372,7 +13375,7 @@ addLayer("f", {
                 return "^"+format(getFUpgEff(62))
             },
             unlocked() {
-                return hasFUpg(61)
+                return hasFUpg(61) && getFUpgEff(62).lt("eee10")
             }
         },
         63: {
@@ -13388,7 +13391,7 @@ addLayer("f", {
                 return "+"+format(getFUpgEff(63))
             },
             unlocked() {
-                return hasFUpg(62)
+                return hasFUpg(62) && getFUpgEff(63).lt("eee10")
             }
         },
         64: {
@@ -13438,7 +13441,7 @@ addLayer("f", {
                 return dis
             },
             unlocked() {
-                return hasFUpg(65)
+                return hasFUpg(65) && getFUpgEff(71).lt("eee10")
             }
         },
         72: {
