@@ -16841,14 +16841,12 @@ addLayer("e", {
             player.e.ph = player.e.ph.add(tmp.e.buyables[92].effect.times(diff))
             }
         }
-        if (hasUpgrade("e",266)) {
-            player.e.ad = player.e.ad.add(player.e.h.div(5).min(player.e.c.div(5)).min(player.e.n.div(5)).times(diff))
-            player.e.ur = player.e.ur.add(player.e.h.div(4).min(player.e.c.div(4)).min(player.e.n.div(2)).min(player.e.o.div(2)).times(diff))
-            player.e.cy = player.e.cy.add(player.e.h.div(5).min(player.e.c.div(4)).min(player.e.n.div(3)).min(player.e.o).times(diff))
-            player.e.gu = player.e.gu.add(player.e.h.div(5).min(player.e.c.div(5)).min(player.e.n.div(5)).min(player.e.o).times(diff))
-            player.e.rp = player.e.rp.add(player.e.h.div(11).min(player.e.c.div(5)).min(player.e.o.div(8)).min(player.e.ph).times(diff))
-            player.e.mrna = player.e.mrna.add(tmp.e.mrgain.times(diff))
-        }
+        player.e.ad = player.e.ad.add(player.e.h.div(5).min(player.e.c.div(5)).min(player.e.n.div(5)).times(diff))
+        player.e.ur = player.e.ur.add(player.e.h.div(4).min(player.e.c.div(4)).min(player.e.n.div(2)).min(player.e.o.div(2)).times(diff))
+        player.e.cy = player.e.cy.add(player.e.h.div(5).min(player.e.c.div(4)).min(player.e.n.div(3)).min(player.e.o).times(diff))
+        player.e.gu = player.e.gu.add(player.e.h.div(5).min(player.e.c.div(5)).min(player.e.n.div(5)).min(player.e.o).times(diff))
+        player.e.rp = player.e.rp.add(player.e.h.div(11).min(player.e.c.div(5)).min(player.e.o.div(8)).min(player.e.ph).times(diff))
+        player.e.mrna = player.e.mrna.add(tmp.e.mrgain.times(diff))
         if (player.e.inC) {
             if ((hasUpgrade("e",162)) && hasAchievement("a",83)) player.e.inC=false
         }
