@@ -2441,7 +2441,7 @@ addLayer("s", {
                 Effect: " + format(tmp[this.layer].buyables[this.id].effect)+"x\n\
                 Amount: " + formatWhole(getBuyableAmount("s", 31)) + extra
             },
-            unlocked() { return hasFUpg(21) }, 
+            unlocked() { return hasFUpg(21) && tmp[this.layer].buyables[this.id].effect.lt("eee10") }, 
             canAfford() {
                     return player.s.severity.gte(tmp[this.layer].buyables[this.id].cost)},
             buy() { 
@@ -2506,7 +2506,7 @@ addLayer("s", {
                 Effect: +" + format(tmp[this.layer].buyables[this.id].effect)+"\n\
                 Amount: " + formatWhole(getBuyableAmount("s", 32)) + extra
             },
-            unlocked() { return player["s"].buyables[31].gte(1) }, 
+            unlocked() { return player["s"].buyables[31].gte(1) && tmp[this.layer].buyables[this.id].effect.lt("eee10") }, 
             canAfford() {
                     return player.s.severity.gte(tmp[this.layer].buyables[this.id].cost)},
             buy() { 
@@ -2567,7 +2567,7 @@ addLayer("s", {
                 Effect: ^" + format(tmp[this.layer].buyables[this.id].effect)+"\n\
                 Amount: " + formatWhole(getBuyableAmount("s", 33)) + extra
             },
-            unlocked() { return player["s"].buyables[32].gte(1) }, 
+            unlocked() { return player["s"].buyables[32].gte(1) && tmp[this.layer].buyables[this.id].effect.lt("eee10") }, 
             canAfford() {
                     return player.s.severity.gte(tmp[this.layer].buyables[this.id].cost)},
             buy() { 
@@ -2847,7 +2847,7 @@ addLayer("s", {
                 return format(getSUpgEff(35))+"x"
             },
             unlocked(){
-                return hasSUpg(34)
+                return hasSUpg(34) && getSUpgEff(35).lt("eee10")
             }
         },
         41: {
@@ -2937,7 +2937,7 @@ addLayer("s", {
                 return "+"+format(getSUpgEff(45))
             },
             unlocked(){
-                return hasSUpg(44)
+                return hasSUpg(44) && getSUpgEff(45).lt("eee10")
             }
         },
         51: {
@@ -2956,7 +2956,7 @@ addLayer("s", {
                 return "^"+format(getSUpgEff(51))
             },
             unlocked(){
-                return hasSUpg(45)
+                return hasSUpg(45) && getSUpgEff(51).lt("eee10")
             }
         },
         52: {
@@ -2975,7 +2975,7 @@ addLayer("s", {
                 return "^"+format(getSUpgEff(52))
             },
             unlocked(){
-                return hasSUpg(51)
+                return hasSUpg(51) && getSUpgEff(52).lt("eee10")
             }
         },
         53: {
@@ -2999,7 +2999,7 @@ addLayer("s", {
                 return "^"+format(getSUpgEff(53))
             },
             unlocked(){
-                return hasSUpg(52)
+                return hasSUpg(52) && getSUpgEff(53).lt("eee10")
             }
         },
         54: {
@@ -3023,7 +3023,7 @@ addLayer("s", {
                 return "^"+format(getSUpgEff(54))
             },
             unlocked(){
-                return hasSUpg(53)
+                return hasSUpg(53) && getSUpgEff(54).lt("eee10")
             }
         },
         55: {
@@ -3042,7 +3042,7 @@ addLayer("s", {
                 return "^"+format(getSUpgEff(55))
             },
             unlocked(){
-                return hasSUpg(54)
+                return hasSUpg(54) && getSUpgEff(55).lt("eee10")
             }
         },
     },
@@ -3092,7 +3092,7 @@ addLayer("s", {
             },
             rewardDisplay() {return format(this.rewardEffect())+"x"},
             unlocked(){
-                return hasMilestone("d", 8)
+                return hasMilestone("d", 8) && this.rewardEffect().lt("eee10")
             }
         },
         12: {
@@ -3135,7 +3135,7 @@ addLayer("s", {
             },
             rewardDisplay() {return format(this.rewardEffect())+"x"},
             unlocked(){
-                return hasChallenge("s", 11)
+                return hasChallenge("s", 11) && this.rewardEffect().lt("eee10")
             }
         },
         21: {
@@ -3178,7 +3178,7 @@ addLayer("s", {
             },
             rewardDisplay() {return format(this.rewardEffect())+"x"},
             unlocked(){
-                return hasChallenge("s", 12)
+                return hasChallenge("s", 12) && this.rewardEffect().lt("eee10")
             }
         },
         22: {
@@ -3227,7 +3227,7 @@ addLayer("s", {
             },
             rewardDisplay() {return "^"+format(this.rewardEffect())},
             unlocked(){
-                return hasChallenge("s", 21)
+                return hasChallenge("s", 21) && this.rewardEffect().lt("eee10")
             }
         },
     },
@@ -3707,7 +3707,7 @@ addLayer("d", {
             return format(getDUpgEff(11))+"x"
             },
             unlocked() {
-                return hasMilestone("d", 2)
+                return hasMilestone("d", 2) && getDUpgEff(11).lt("eee10")
             }
         },
         12: {
@@ -3728,7 +3728,7 @@ addLayer("d", {
             return format(getDUpgEff(12))+"x"
             },
             unlocked() {
-                return hasDUpg(11)
+                return hasDUpg(11) && getDUpgEff(12).lt("eeee10")
             }
         },
         13: {
@@ -3746,7 +3746,7 @@ addLayer("d", {
             return format(getDUpgEff(13))+"x"
             },
             unlocked() {
-                return hasDUpg(12)
+                return hasDUpg(12) && getDUpgEff(13).lt("eeee10")
             }
         },
         14: {
@@ -3767,7 +3767,7 @@ addLayer("d", {
                 return dis
             },
             unlocked() {
-                return hasDUpg(13)
+                return hasDUpg(13) && getDUpgEff(14).lt("eee10")
             }
         },
         21: {
@@ -3785,7 +3785,7 @@ addLayer("d", {
             return format(getDUpgEff(21))+"x"
             },
             unlocked() {
-                return hasDUpg(14)
+                return hasDUpg(14) && getDUpgEff(21).lt("eee10")
             }
         },
         22: {
@@ -3827,7 +3827,7 @@ addLayer("d", {
             return format(getDUpgEff(24))+"x"
             },
             unlocked() {
-                return hasDUpg(23)
+                return hasDUpg(23) && getDUpgEff(24).lt("eee10")
             }
         },
         31: {
@@ -3849,7 +3849,7 @@ addLayer("d", {
             return "^"+format(getDUpgEff(31))
             },
             unlocked() {
-                return hasDUpg(24)
+                return hasDUpg(24) && getDUpgEff(31).lt("eee10")
             }
         },
         32: {
@@ -3871,7 +3871,7 @@ addLayer("d", {
             return "^"+format(getDUpgEff(32))
             },
             unlocked() {
-                return hasDUpg(31)
+                return hasDUpg(31) && getDUpgEff(32).lt("eee10")
             }
         },
         33: {
@@ -3888,7 +3888,7 @@ addLayer("d", {
             return "^"+format(getDUpgEff(33))
             },
             unlocked() {
-                return hasDUpg(32)
+                return hasDUpg(32) && getDUpgEff(33).lt("eee10")
             }
         },
         34: {
@@ -3921,7 +3921,7 @@ addLayer("d", {
             return "+"+format(getDUpgEff(41))
             },
             unlocked() {
-                return hasSUpg(55)
+                return hasSUpg(55) && getDUpgEff(41).lt("eeeee61")
             }
         },
         42: {
@@ -3949,7 +3949,7 @@ addLayer("d", {
                 return dis
             },
             unlocked() {
-                return hasDUpg(42)
+                return hasDUpg(42) && getDUpgEff(43).lt("eeee21")
             }
         },
         44: {
@@ -3966,7 +3966,7 @@ addLayer("d", {
                 return "^"+format(getDUpgEff(44))
                 },
             unlocked() {
-                return hasDUpg(43)
+                return hasDUpg(43) && getDUpgEff(44).lt("eee10")
             }
         },
     },
