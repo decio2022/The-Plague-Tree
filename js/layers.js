@@ -2065,7 +2065,7 @@ addLayer("s", {
                 Effect: " + format(tmp.s.buyables[11].effect)+"x\n\
                 Amount: " + formatWhole(getBuyableAmount("s", 11)) + extra
             },
-            unlocked() { return hasMilestone("s", 2) }, 
+            unlocked() { return hasMilestone("s", 2) && tmp.s.buyables[11].effect.lt("eee10") }, 
             canAfford() {
                     return player.s.severity.gte(tmp.s.buyables[11].cost)},
             buy() { 
@@ -2126,7 +2126,7 @@ addLayer("s", {
                 Effect: " + format(tmp.s.buyables[12].effect)+"x\n\
                 Amount: " + formatWhole(getBuyableAmount("s", 12)) + extra
             },
-            unlocked() { return player[this.layer].buyables[11].gte(1) }, 
+            unlocked() { return player[this.layer].buyables[11].gte(1) && tmp.s.buyables[12].effect.lt("eee10") }, 
             canAfford() {
                     return player.s.severity.gte(tmp.s.buyables[12].cost)},
             buy() { 
@@ -2186,7 +2186,7 @@ addLayer("s", {
                 Effect: " + format(tmp[this.layer].buyables[this.id].effect)+"x\n\
                 Amount: " + formatWhole(getBuyableAmount("s", 21)) + extra
             },
-            unlocked() { return player[this.layer].buyables[12].gte(1) }, 
+            unlocked() { return player[this.layer].buyables[12].gte(1) && tmp.s.buyables[21].effect.lt("eee10") }, 
             canAfford() {
                     return player.s.severity.gte(tmp[this.layer].buyables[this.id].cost)},
             buy() { 
@@ -2250,7 +2250,7 @@ addLayer("s", {
                 Effect: " + format(tmp[this.layer].buyables[this.id].effect)+"x\n\
                 Amount: " + formatWhole(getBuyableAmount("s", 22)) + extra
             },
-            unlocked() { return player[this.layer].buyables[21].gte(1) }, 
+            unlocked() { return player[this.layer].buyables[21].gte(1) && tmp.s.buyables[22].effect.lt("eee10") }, 
             canAfford() {
                     return player.s.severity.gte(tmp[this.layer].buyables[this.id].cost)},
             buy() { 
@@ -2316,7 +2316,7 @@ addLayer("s", {
                 Effect: ^" + format(tmp[this.layer].buyables[this.id].effect)+"\n\
                 Amount: " + formatWhole(getBuyableAmount("s", 13)) + extra
             },
-            unlocked() { return hasMilestone("s", 3) }, 
+            unlocked() { return hasMilestone("s", 3) && tmp[this.layer].buyables[this.id].effect.lt("eee10") }, 
             canAfford() {
                     return player.s.severity.gte(tmp[this.layer].buyables[this.id].cost)},
             buy() { 
@@ -2379,7 +2379,7 @@ addLayer("s", {
                 Effect: " + format(tmp[this.layer].buyables[this.id].effect)+"x\n\
                 Amount: " + formatWhole(getBuyableAmount("s", 23)) + extra
             },
-            unlocked() { return player[this.layer].buyables[13].gte(1) }, 
+            unlocked() { return player[this.layer].buyables[13].gte(1) && tmp[this.layer].buyables[this.id].effect.lt("eee10") }, 
             canAfford() {
                 return player.s.severity.gte(tmp[this.layer].buyables[this.id].cost)},
             buy() { 
@@ -2611,6 +2611,9 @@ addLayer("s", {
             effectDisplay(){
             return format(getSUpgEff(11))+"x"
             },
+            unlocked(){
+                return true && getSUpgEff(11).lt("eee10")
+            },
         },
         12: {
             title: "Fever",
@@ -2648,7 +2651,7 @@ addLayer("s", {
             return format(getSUpgEff(13))+"x"
             },
             unlocked(){
-                return hasSUpg(12)
+                return hasSUpg(12) && getSUpgEff(13).lt("eee10")
             }
         },
         14: {
@@ -2671,7 +2674,7 @@ addLayer("s", {
                 return dis
             },
             unlocked(){
-                return hasSUpg(13)
+                return hasSUpg(13) && getSUpgEff(14).lt("eee10")
             }
         },
         15: {
@@ -2692,7 +2695,7 @@ addLayer("s", {
             return format(getSUpgEff(15))+"x"
             },
             unlocked(){
-                return hasSUpg(14)
+                return hasSUpg(14) && getSUpgEff(15).lt("eee10")
             }
         },
         21: {
@@ -2751,7 +2754,7 @@ addLayer("s", {
             return format(getSUpgEff(24))+"x"
             },
             unlocked(){
-                return hasSUpg(23)
+                return hasSUpg(23) && getSUpgEff(24).lt("eee10")
             }
         },
         25: {
@@ -2793,7 +2796,7 @@ addLayer("s", {
                 return format(getSUpgEff(32))+"x"
             },
             unlocked(){
-                return hasSUpg(31)
+                return hasSUpg(31) && getSUpgEff(32).lt("eee10")
             }
         },
         33: {
@@ -2813,7 +2816,7 @@ addLayer("s", {
                 return "+"+format(getSUpgEff(33))
             },
             unlocked(){
-                return hasSUpg(32)
+                return hasSUpg(32) && getSUpgEff(33).lt("eee10")
             }
         },
         34: {
